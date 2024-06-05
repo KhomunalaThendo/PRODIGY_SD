@@ -11,7 +11,7 @@ root.geometry("400x300")
 
 def results():
  
-guess = int(guess_entry.get())
+  guess = int(guess_entry.get())
   difficulty = options.get()
 
   if difficulty == "Easy":
