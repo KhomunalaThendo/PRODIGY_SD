@@ -3,10 +3,9 @@ import customtkinter
 import random
 
 
-
 root = customtkinter.CTk()
 root.title("Number Guess")
-root.geometry("400x300")
+root.geometry("400x400")
 
 
 def results():
@@ -14,13 +13,15 @@ def results():
   guess = int(guess_entry.get())
   difficulty = options.get()
 
-  if difficulty == "Easy":
+  if difficulty == "Easy (1-20)":
         number = random.randint(1, 20)
         max_limit = 20
-  elif difficulty == "Medium":
+       
+  elif difficulty == "Medium (1-50)":
         number = random.randint(1, 50)
         max_limit = 50
-  elif difficulty == "Hard":
+
+  elif difficulty == "Hard (1-100)":
         number = random.randint(1, 100)
         max_limit = 100
 
@@ -38,15 +39,17 @@ dificcult_lbl = customtkinter.CTkLabel(root, text="Choose Difficulty")
 dificcult_lbl.pack(pady = 10)
 
 
-options = customtkinter.CTkOptionMenu(master=root, values=["Easy","Medium","Hard"])
-options.set("Easy")
-options.pack(pady = 10)
+options = customtkinter.CTkOptionMenu(master=root, values=["Easy (1-20)","Medium (1-50)","Hard (1-100)"])
+options.set("Easy (1-20)")
+options.pack(pady = 5)
+
 
 wlcm_label = customtkinter.CTkLabel(root, text="Guess Number")
-wlcm_label.pack(pady = 10)
+wlcm_label.pack(pady = 5)
+
 
 guess_entry = customtkinter.CTkEntry(root, placeholder_text="Enter Numer")
-guess_entry.pack(pady = 10)
+guess_entry.pack(pady = 5)
 
 submit_btn = customtkinter.CTkButton(master=root, text= "Submit", command=results)
 submit_btn.pack(pady = 10)
