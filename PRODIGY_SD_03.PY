@@ -111,7 +111,7 @@ email= customtkinter.CTkEntry(master = left_frame, placeholder_text="Email Addre
 email.pack(pady = 10)
 
 
-addbtn = customtkinter.CTkButton(master= left_frame, text= "ADD", command=add_contacts())
+addbtn = customtkinter.CTkButton(master= left_frame, text= "ADD", command=lambda:add_contacts())
 addbtn.pack(pady = 10)
 
 deletebtn = customtkinter.CTkButton(master= left_frame, text= "DELETE", command= delete_contacts)
